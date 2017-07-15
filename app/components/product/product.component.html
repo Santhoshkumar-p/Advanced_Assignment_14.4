@@ -1,0 +1,29 @@
+<!--Used boostrap for table
+the product name has an <a> tag attached to it
+Clicking on it would take you to the product details page
+for edit/save or delete
+Also, used routerLink attribute for navigating to the edit page-->
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+  <tr class="bg-primary text-white">
+    <th>#</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of products; let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td><a [routerLink]="['/products', prod.id]">{{prod.productName}}</a></td>
+      <td>{{prod.productLine}}</td>
+      <td>{{ prod.buyPrice | currency:'INR': true}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<button (click)="addNew()">Add New Product</button>
+
+
+   

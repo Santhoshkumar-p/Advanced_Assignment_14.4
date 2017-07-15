@@ -1,0 +1,22 @@
+<!--used ngModel for 2-way binding -->
+<div class="details">
+  <form>
+    <div class="form-group">
+      <label for="prodName"><span>Product</span><input type="text"
+         class="form-control" id="prodName" name="prodName" [(ngModel)]="product.productName"></label>
+    </div>
+    <div class="form-group">
+      <label for="prodPrice"><span>Price (in ₹)</span><input type="text"
+         class="form-control" id="prodPrice" name="prodPrice" [(ngModel)]="product.buyPrice"></label>
+    </div>
+    <div class="form-group">
+      <label for="prodDescr"><span>Description</span><textarea
+        class="form-control" id="prodDescr" name="prodDescr" [(ngModel)]="product.productLine" rows="3"></textarea></label>
+    </div>
+  </form>
+
+  <br>
+  <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+  <button type="button" class="btn btn-primary" (click)="addProduct()">Add</button>
+</div>
+      
